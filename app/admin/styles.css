@@ -1,0 +1,37 @@
+:root{
+  --bg:#0b1220; --panel:#121a2a; --text:#e9eef7; --muted:#93a0b5;
+  --acc:#2e90ff; --ok:#37c871; --warn:#ffb020; --danger:#ff6b6b;
+  --line:#1e2a44;
+}
+*{box-sizing:border-box}
+body{margin:0;font-family:Inter,system-ui,"Noto Sans SC",sans-serif;background:var(--bg);color:var(--text)}
+.topbar{display:flex;gap:12px;align-items:center;padding:16px 20px;background:var(--panel);position:sticky;top:0;z-index:10;border-bottom:1px solid var(--line)}
+.topbar h1{font-size:18px;margin:0}
+.topbar .who{margin-left:auto;color:var(--muted)}
+.wrap{width:min(1200px,96vw);margin:20px auto}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:16px}
+
+.search{display:flex;gap:8px;margin-bottom:12px}
+.search input{flex:1;padding:10px;border-radius:10px;border:1px solid var(--line);background:#0e1627;color:var(--text)}
+button{padding:10px 12px;border-radius:10px;border:0;background:var(--acc);color:#fff;cursor:pointer}
+a.btn-secondary, .btn-secondary{display:inline-grid;place-items:center;padding:10px 12px;border-radius:10px;background:#0e1627;border:1px solid var(--line);color:#cfe1ff;text-decoration:none}
+
+.table{width:100%;border-collapse:collapse}
+.table th,.table td{padding:10px;border-bottom:1px solid var(--line);text-align:left;font-size:14px;vertical-align:middle}
+.muted{color:var(--muted)}
+.pill{display:inline-block;padding:2px 8px;border-radius:999px;border:1px solid var(--line);background:#0e1627}
+.pill.ok{border-color:#1c4e39}
+.pill.warn{border-color:#5b471d}
+.actions{display:flex;gap:8px;flex-wrap:wrap}
+button.link{background:#0e1627;color:#cfe1ff;border:1px solid var(--line)}
+button.danger{background:var(--danger)}
+button.warn{background:var(--warn)}
+
+input,select{background:#0e1627;border:1px solid var(--line);color:var(--text);padding:10px;border-radius:10px;width:100%}
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+
+/* Modal */
+.modal{position:fixed;inset:0;background:rgba(0,0,0,.5);display:grid;place-items:center;padding:20px}
+.modal[hidden]{display:none}
+.modal__card{width:min(640px,96vw);background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:16px;box-shadow:0 20px 50px rgba(0,0,0,.4)}
+.modal__actions{display:flex;gap:8px;justify-content:flex-end;margin-top:12px}

@@ -1,0 +1,195 @@
+  :root{
+    --bg:#e6f1fb;
+    --text:#2a3b4f;
+    --blue:#2e90ff;
+    --border:#dbe8f7;
+    --hover:#f3f7ff;
+    --shadow:0 12px 28px rgba(32,74,128,.10);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:Inter,system-ui,"Noto Sans SC",sans-serif;background:#f5f8fd;color:var(--text)}
+
+  .header{position:sticky;top:0;z-index:1000;background:var(--bg);border-bottom:1px solid #fff}
+  .wrap{width:min(1240px,96vw);margin:0 auto}
+  .header-inner{height:60px;display:flex;align-items:center;gap:16px}
+  .logo img{width:38px;height:24px;object-fit:contain}
+
+  /* nav */
+  .nav{display:flex;gap:24px;align-items:center;list-style:none;flex:1;font-weight:700;color:#334a63}
+  .nav a{padding:10px 2px;text-decoration:none;color:inherit;font-size:15px;transition:.15s}
+  .nav a:hover{color:#0a58ff}
+  .nav a.active{color:#0a58ff;position:relative}
+  .nav a.active::after{content:"";position:absolute;left:0;right:0;bottom:-6px;height:3px;background:var(--blue);border-radius:3px}
+
+  /* dropdown */
+  .has-dropdown{position:relative}
+  .dropdown-scroll{
+    position:absolute;top:100%;left:0;margin-top:8px;
+    background:#fff;border:1px solid var(--border);border-radius:12px;box-shadow:var(--shadow);
+    padding:20px 40px;width:1000px;
+    opacity:0;transform:translateY(10px);pointer-events:none;
+    transition:all .25s ease;
+  }
+  .has-dropdown:hover .dropdown-scroll{opacity:1;transform:translateY(0);pointer-events:auto}
+  .scroll-container{display:flex;gap:20px;overflow:hidden}
+  .scroll-btn{position:absolute;top:50%;transform:translateY(-50%);width:28px;height:28px;border:none;border-radius:50%;background:#fff;box-shadow:0 2px 6px rgba(0,0,0,.2);cursor:pointer}
+  .scroll-prev{left:6px}.scroll-next{right:6px}
+  .card{flex:0 0 auto;width:180px;height:240px;background:#f1f6ff;border:1px solid var(--border);border-radius:12px;box-shadow:var(--shadow);display:flex;flex-direction:column;align-items:center;justify-content:space-between;padding:12px}
+  .card img{max-width:100%;height:120px;object-fit:contain}
+  .card .title{font-weight:700;margin:8px 0}
+  .card .play{background:var(--blue);border:none;color:#fff;font-weight:700;padding:6px 14px;border-radius:20px;cursor:pointer}
+  .card .play:hover{background:#1c6fe0}
+
+  /* right side */
+  .right{display:flex;align-items:center;gap:12px}
+  .account{position:relative}
+  .user-chip{display:flex;align-items:center;gap:10px;background:#fff;padding:6px 10px;border-radius:999px;border:1px solid var(--border);box-shadow:var(--shadow);font-weight:700;cursor:pointer}
+  .avatar{width:28px;height:28px;border-radius:50%;background:#d9e7ff url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=100&auto=format&fit=crop') center/cover}
+  .user-balance{color:#0d6efd;font-weight:800}
+  .acc-menu{position:absolute;right:0;top:calc(100% + 8px);min-width:200px;background:#fff;border:1px solid var(--border);border-radius:12px;box-shadow:0 6px 20px rgba(0,0,0,.12);padding:6px 0;opacity:0;transform:translateY(10px);pointer-events:none;transition:all .25s ease}
+  .acc-menu.open{opacity:1;transform:translateY(0);pointer-events:auto}
+  .acc-item{display:flex;align-items:center;gap:10px;padding:10px 14px;font-size:14px;color:#334a63;text-decoration:none;cursor:pointer;transition:.2s}
+  .acc-item:hover{background:var(--hover);color:#0a58ff}
+  .acc-item.logout{border-top:1px solid #e9eef5;margin-top:4px;padding:12px 14px;font-weight:700;color:#cf3e3e}
+  .acc-item.logout:hover{background:#fff2f2;color:#a82121}
+  .lang{display:flex;align-items:center;gap:6px;padding:8px 12px;border-radius:999px;background:#fff;border:1px solid var(--border);box-shadow:var(--shadow);font-weight:700;color:#5b6f86}
+  
+  .nav-icons {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  margin-right: 20px;
+}
+
+.nav-icons .icon svg {
+  width: 32px;
+  height: 32px;
+  color: #333;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.nav-icons .icon svg:hover {
+  color: #007bff;
+}
+/* випадаюче меню на всю ширину */
+.dropdown-full {
+  position: absolute;
+  left: 0;
+  top: 100%;
+  width: 100vw;
+  background: #fff;
+  border-top: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  padding: 30px 60px;
+  opacity: 0;
+  transform: translateY(10px);
+  pointer-events: none;
+  transition: all 0.25s ease;
+  z-index: 100;
+}
+
+.has-dropdown:hover .dropdown-full {
+  width: 100%;
+  opacity: 1;
+  transform: translateY(0);
+  /* pointer-events: auto; */
+}
+
+/* грід-сітка */
+.grid-menu {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 24px;
+}
+
+.grid-item {
+  background: #f8fbff;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  padding: 16px;
+  text-align: center;
+  transition: 0.2s;
+}
+
+.grid-item:hover {
+  transform: translateY(-4px);
+}
+
+.grid-item img {
+  width: 100%;
+  max-width: 120px;
+  height: 80px;
+  object-fit: contain;
+  margin: 0 auto 12px;
+}
+
+.grid-item .title {
+  font-weight: 700;
+  color: #334a63;
+  font-size: 14px;
+}
+
+
+/* full width dropdown */
+.dropdown-full {
+  position: absolute;
+  left: 0;
+  top: 100%;
+  width: 100vw;                 /* на всю ширину екрана */
+  background: #fff;
+  border-top: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  padding: 40px 60px;
+  opacity: 0;
+  transform: translateY(10px);
+  pointer-events: none;
+  transition: all .25s ease;
+  z-index: 100;
+}
+
+.has-dropdown:hover .dropdown-full {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+/* grid layout */
+.grid-menu {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 30px;
+}
+
+.grid-item {
+  background: #f8fbff;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  padding: 16px;
+  text-align: center;
+  transition: 0.2s;
+}
+
+.grid-item:hover {
+  transform: translateY(-4px);
+}
+
+.grid-item img {
+  width: 100%;
+  max-width: 120px;
+  height: 80px;
+  object-fit: contain;
+  margin: 0 auto 12px;
+}
+
+.grid-item .title {
+  font-weight: 700;
+  color: #334a63;
+  font-size: 14px;
+}
+
+
+
+

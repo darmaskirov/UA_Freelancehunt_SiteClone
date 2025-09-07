@@ -1,0 +1,113 @@
+:root{
+  --bg:#eaf4ff; --text:#2b3b4f; --muted:#7b90a6;
+  --blue:#2f8eff; --blue2:#55bbff; --border:#e4eef7; --white:#fff;
+  --shadow:0 16px 32px rgba(36,92,160,.15);
+  --r-lg:18px; --r-md:12px; --r-sm:10px;
+}
+*{box-sizing:border-box}
+body{
+  margin:0; color:var(--text);
+  font-family:"Inter","Noto Sans SC",system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial,sans-serif;
+  background:radial-gradient(1200px 240px at 50% -120px, rgba(71,165,255,.20), transparent), var(--bg);
+}
+.wrap{width:min(1220px,96vw); margin:0 auto}
+
+/* HEADER */
+.top{height:70px; display:flex; align-items:center; gap:26px}
+.logo{width:38px;height:24px;border-radius:6px;background:linear-gradient(180deg,#66c2ff,#2e90ff);box-shadow:0 6px 16px rgba(46,144,255,.25)}
+.nav{display:flex;gap:22px;font-weight:700}
+.nav a{color:#354c66;text-decoration:none}
+.sp{flex:1}
+.right{display:flex;align-items:center;gap:10px}
+.pill{height:32px;padding:0 14px;border-radius:999px;border:1px solid #dbe9fb;background:linear-gradient(180deg,#f5f9ff,#eaf2ff);color:#5f7aa0;font-weight:700}
+.pill.primary{background:linear-gradient(180deg,#55bbff,#2f8eff);color:#fff;border-color:transparent;box-shadow:0 10px 18px rgba(47,142,255,.30)}
+.lang{background:#fff;border:1px solid var(--border);border-radius:999px;padding:6px 10px;box-shadow:var(--shadow)}
+
+/* PANEL */
+.panel{
+  width:980px; max-width:96vw; margin:16px auto 24px;
+  background:#fff; border:1px solid var(--border); border-radius:22px; box-shadow:var(--shadow);
+  padding:18px;
+}
+
+/* SEGMENT (декоративный) */
+.segment{
+  width:520px; height:44px; margin:0 auto 14px; border-radius:14px;
+  background:linear-gradient(180deg,#eaf6ff,#dff0ff); border:1px solid #cfe6ff;
+  box-shadow:inset 0 -6px 10px rgba(47,142,255,.1), 0 8px 16px rgba(36,92,160,.12);
+  display:flex; align-items:center; gap:6px; padding:6px;
+}
+.seg-item{flex:1; height:100%; border-radius:10px; background:#fff; border:1px solid #cfe1f7}
+.seg-item.active{background:linear-gradient(180deg,#55bbff,#2f8eff); border-color:#2f8eff}
+
+/* PROVIDER CHIPS + SEARCH */
+.providers{
+  display:flex; align-items:center; gap:10px; flex-wrap:wrap;
+  padding:12px; border-radius:16px; background:#f8fbff; border:1px solid var(--border);
+}
+.chip{
+  height:32px; padding:0 14px; border-radius:999px; border:1px solid #dbe9fb;
+  background:linear-gradient(180deg,#f5f9ff,#eaf2ff); color:#5f7391; font-weight:700; cursor:pointer;
+}
+.chip.blue{background:linear-gradient(180deg,#55bbff,#2f8eff); color:#fff; border-color:transparent;
+  box-shadow:0 8px 16px rgba(47,142,255,.28)}
+.search{margin-left:auto; position:relative}
+.search input{
+  width:240px; height:34px; padding:0 34px 0 12px; border-radius:999px; border:1px solid #dbe9fb; outline:none;
+  background:#fff; font:inherit; color:var(--text);
+}
+.search svg{position:absolute; right:10px; top:50%; transform:translateY(-50%); color:#8fa4be}
+
+/* TABS */
+.tabs{display:flex; gap:18px; margin:14px 0 10px}
+.tab{
+  height:32px; padding:0 12px; border-radius:999px; color:#6b8097; background:#f6faff; border:1px solid var(--border); font-weight:700; cursor:pointer;
+}
+.tab.active{background:linear-gradient(180deg,#55bbff,#2f8eff); color:#fff; border-color:transparent; box-shadow:0 8px 16px rgba(47,142,255,.28)}
+
+/* CARDS GRID */
+.grid{display:grid; grid-template-columns:repeat(6,1fr); gap:14px}
+.card{
+  background:#fff; border:1px solid var(--border); border-radius:16px; box-shadow:0 10px 18px rgba(36,92,160,.10);
+  overflow:hidden; display:flex; flex-direction:column; position:relative;
+}
+/* Заміни свій .thumb на таке */
+.thumb{
+  aspect-ratio: 4 / 3;
+  /* НІЯКИХ 'background:' тут! Лише longhand-и, якщо треба */
+  background-color: #e9edf4;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.card.placeholder .thumb{
+  background-image:linear-gradient(135deg,#eef4fb,#e8eef6);
+}
+.card .title{padding:10px 12px; font-weight:700; color:#4a6076; font-size:14px}
+.badges{position:absolute; right:8px; top:8px; display:flex; gap:6px}
+.badge{width:22px;height:22px;border-radius:6px;background:#fff;border:1px solid #dbe9fb;display:grid;place-items:center;box-shadow:0 6px 10px rgba(36,92,160,.12); cursor:pointer}
+.badge.star.active{background:linear-gradient(180deg,#ffe6a3,#ffc34a); border-color:#f4c251}
+.meta{padding:0 12px 12px; color:#94a5b9; font-size:12px}
+
+/* PAGINATION */
+.pager{display:flex; gap:8px; justify-content:center; align-items:center; margin:16px 0 4px; color:#7a8ea5; flex-wrap:wrap}
+.page{
+  min-width:32px; height:32px; padding:0 10px; border-radius:8px; border:1px solid #dbe9fb; background:#fff; display:grid; place-items:center; cursor:pointer; font-weight:700
+}
+.page.active{background:linear-gradient(180deg,#55bbff,#2f8eff); color:#fff; border-color:transparent; box-shadow:0 8px 16px rgba(47,142,255,.28)}
+.page.ellipsis{cursor:default}
+
+/* FOOTER */
+.footer{background:#3b444a;color:#cbd4da;padding:28px 0 48px}
+.brands{display:flex;flex-wrap:wrap;gap:22px;justify-content:center}
+.brand{width:110px;height:26px;border-radius:6px;background:#58636c;opacity:.9}
+.copy{text-align:center;margin-top:16px;opacity:.9}
+
+@media (max-width: 1100px){
+  .grid{grid-template-columns:repeat(4,1fr)}
+}
+@media (max-width: 720px){
+  .grid{grid-template-columns:repeat(2,1fr)}
+  .providers .search{width:100%; order:99; margin-left:0}
+  .search input{width:100%}
+}
